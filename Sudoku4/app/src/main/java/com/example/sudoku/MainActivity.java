@@ -292,7 +292,7 @@ public class MainActivity extends AppCompatActivity {
         {
             int i = random.nextInt(9);
             int j = random.nextInt(9);
-            if(buttons[i][j].get()==null)
+            if(buttons[i][j].value==0)
             {
                 continue;
             }
@@ -302,7 +302,16 @@ public class MainActivity extends AppCompatActivity {
                 count++;
             }
         }
-
+        for(int i=0; i<9; i++)
+        {
+            for(int j=0; j<9; j++)
+            {
+                if(buttons[i][j].value!=0)
+                {
+                    buttons[i][j].setClickable(false);
+                }
+            }
+        }
         //입력 테이블 레이아웃
         Button [][] inputbtn = new Button[3][3];
         Button [] Controlbtn = new Button[2];
@@ -344,6 +353,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 buttons[x[0]][y[0]].set(0);
                 check();
+                input.setVisibility(View.INVISIBLE);
             }
         });
     }

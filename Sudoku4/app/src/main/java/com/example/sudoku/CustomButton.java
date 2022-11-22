@@ -19,7 +19,7 @@ public class CustomButton extends FrameLayout {
         this.i = i;
         this.j = j;
         textView = new TextView(context);
-        textView.setTextSize(40);
+        textView.setTextSize(35);
         textView.setGravity(Gravity.CENTER_HORIZONTAL);
         textView.setPadding(5,15,5,15);
 
@@ -43,6 +43,7 @@ public class CustomButton extends FrameLayout {
     }
     public String get() {
         String temp =  textView.getText().toString();
+        value =0;
         return temp;
     }
 }
